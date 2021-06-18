@@ -5,11 +5,18 @@ const sonde = [];
 
 function main() {
   let message = "Hello Dependency Injection"
-  if (config.isInATest) {
-    sonde.push(message);
-  }
-  else {
-    console.log(message);
+  let messageWriter = new MessageWriter();
+  messageWriter.write(message)
+}
+
+class MessageWriter {
+  write(message) {
+    if (config.isInATest) {
+      sonde.push(message);
+    }
+    else {
+      console.log(message);
+    }
   }
 }
 
