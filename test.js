@@ -1,6 +1,12 @@
-function main() {
-  let message = "Hello Dependency Injection"
-  console.log(message);
-}
+const { expect } = require('chai');
 
-main();
+const { main, sonde, config } = require('./index');
+
+describe('Hello Feature', function() {
+  it('prints the message', function() {
+    config.isInATest = true;
+    main()
+    expect(sonde).to.deep.equal(["Hello Dependency Injection"]);
+    config.isInATest = true;
+  });
+});
