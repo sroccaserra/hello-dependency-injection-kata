@@ -1,8 +1,8 @@
-// On veut que ça imprime "Hello DI" au lieu de "Hello Dependency Injection"
+// [X] On veut que ça imprime "Hello DI" au lieu de "Hello Dependency Injection"
 
 function main(messageWriter = new MessageWriter()) {
-  const message = "Hello Dependency Injection"
-  messageWriter.write(message)
+  const message = "Hello DI";
+  messageWriter.write(message);
 }
 
 class MessageWriter {
@@ -11,7 +11,7 @@ class MessageWriter {
   }
 }
 
-main()
+main();
 
 module.exports = {
   main,
